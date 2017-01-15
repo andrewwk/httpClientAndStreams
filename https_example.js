@@ -1,18 +1,18 @@
-const https = require('https');
+const https = require("https");
 
-// console.log('I did it!');
+// console.log("I did it!");
 
 const options = {
-  host: 'www.example.org',
-  path: '/'
+  host: "stream-large-file.herokuapp.com",
+  path: "/give-me-stuff-now"
 };
 
 // called by https when the request is made.
 const callback = (response) => {
-  console.log('In response handler callback!');
+  console.log("In response handler callback!");
 
-  response.on('data', (chunk) => {
-    console.log('[-- CHUNK OF LENGTH ' + chunk.length + ' --]');
+  response.on("data", (chunk) => {
+    console.log("[-- CHUNK OF LENGTH " + chunk.length + " --]");
     console.log(chunk.toString());
   });
 };
